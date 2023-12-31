@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" href="icon.jpg">
+    <title>Ratu's Day</title>
+
+    <style>
+        .jumbotron {
+          background-image: url(./bg5.png);
+        }
+        
+        .main {
+            background-image: url(./bg-main1.jpg);
+        }
+    </style>
+
+</head>
+<body>
+    <section class="jumbotron">
+        <div class="h-day">
+            <img src="./Screenshot__14_-removebg-preview.png" alt="">
+        </div>
+    </section>
+        <section class="main">
+            <div class="flipGo-wrapper" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipGo">
+                    <div class="front cards-one" id="flipthis">
+                        <img src="./2982.jpg" alt="">
+                    </div>
+                    <div class="rear">
+                        <h1>BEAUTY</h1>
+                        <p>Next time you think of beautiful things, Don't forget to count yourself in.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flipGo-wrapper1" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipGo1">
+                    <div class="front cards-two" id="flipthis">
+                        <img src="./3078.jpg" alt="">
+                    </div>
+                    <div class="rear">
+                        <h1>EXTRAORDINARY</h1>
+                        <p>Happiness and confidence are the prettiest things you can wear.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flipGo-wrapper2" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipGo2">
+                    <div class="front cards-three" id="flipthis">
+                        <img src="./3016.jpg" alt="">
+                    </div>
+                    <div class="rear">
+                        <h1>CHARISMATICS</h1>
+                        <p>You only have one life to live. Make sure it's yours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            $(window).scroll(function() {
+                //parallax
+                var wScroll = $(this).scrollTop();
+
+               $('.jumbotron img').css({
+                    'transform' : 'translate(-50%, '+ wScroll/6 +'%)'
+                });
+
+                //cards onScroll transition
+                if( wScroll > $('.main').offset().top - 250 ) {
+                    $('.main .flipGo-wrapper').addClass('muncul');
+                }
+
+                if( wScroll > $('.main').offset().top + 300 ) {
+                    $('.main .flipGo-wrapper1').addClass('muncul');
+                }
+
+                if( wScroll > $('.main').offset().top + 600 ) {
+                    $('.main .flipGo-wrapper2').addClass('muncul');
+                }
+            });
+        </script>
+</body>
+</html>
